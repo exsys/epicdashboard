@@ -4,13 +4,11 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 type Props = {
     data: PieData[],
     colors?: string[],
-    innerRadius?: number,
-    outerRadius?: number,
 }
 
 const DEFAULT_COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
-export default function PieChartSimple({ data, colors = DEFAULT_COLORS, innerRadius = 40, outerRadius = 80 }: Props) {
+export default function PieChartSimple({ data, colors = DEFAULT_COLORS }: Props) {
     return (
         <ResponsiveContainer width="100%" height="100%">
             <PieChart>

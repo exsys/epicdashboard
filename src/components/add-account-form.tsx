@@ -5,7 +5,7 @@ import NormalButton from './normal-button'
 import DropdownButton from './dropdown-button'
 
 export default function AddAccountForm() {
-    let [isOpen, setIsOpen] = useState<boolean>(false);
+    const [isOpen, setIsOpen] = useState<boolean>(false);
     const EXCHANGES = [
         { name: "IBKR" },
         { name: "BingX" },
