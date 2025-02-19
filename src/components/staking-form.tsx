@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import MiniButton from "./mini-button";
 import WalletIcon from "@/icons/wallet-icon";
 import TokenSelectionButton from "./token-selection-button";
+import DropdownButtonSimple from "./dropdown-button-simple";
 
 export default function StakingForm() {
     const [selectedTokenBalance, setSelectedTokenBalance] = useState<number>(369.42);
@@ -62,7 +63,7 @@ export default function StakingForm() {
                                     <div className="text-xs flex items-center gap-1 opacity-50 mr-1">
                                         <WalletIcon className="w-3 h-3 fill-white" />
                                         <span>
-                                            {selectedOption === "stake" ? 369.42 : 3693.42} EPIC
+                                            {selectedOption === "stake" ? 369.42 : 3693.42} {selectedToken}
                                         </span>
                                     </div>
                                 </div>
@@ -76,7 +77,7 @@ export default function StakingForm() {
                             </div>
 
                             <div className="mt-4 flex items-center justify-between">
-                                <TokenSelectionButton text={selectedToken} />
+                                <TokenSelectionButton options={["EPIC", "XOIL", "WSOL"]} callback={setSelectedToken} />
                                 <div className="ml-2">
                                     <input type="text" inputMode="decimal" autoComplete="off"
                                         className="w-full bg-transparent text-xl outline-none text-right" placeholder="0.00" value={stakeAmount}
